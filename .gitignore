@@ -106,3 +106,4 @@ dist
 # IDE
 .idea
 test/data/*
+test/result/*
