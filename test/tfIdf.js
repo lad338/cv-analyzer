@@ -1,22 +1,16 @@
-const natural = require('natural');
-const TfIdf = natural.TfIdf;
-const tfidf = new TfIdf();
+const tfIdf = require("../lib/tfIdf")
 
-tfidf.addDocument('this document is about node. a fat cat is dancing in the kitchen');
-// console.log('node --------------------------------');
-// tfidf.tfidfs('node', function(i, measure) {
-//   console.log('document #' + i + ' is ' + measure);
-// });
-//
-// console.log('ruby --------------------------------');
-// tfidf.tfidfs('ruby', function(i, measure) {
-//   console.log('document #' + i + ' is ' + measure);
-// });
-//
-// console.log('node --------------------------------');
-// tfidf.tfidfs('node', function(i, measure) {
-//   console.log('document #' + i + ' is ' + measure);
-// });
+const main = async () => {
+  const path = require('path');
+  const filePath = path.join(__dirname, "data/cv.pdf");
+  const result = await tfIdf.getTermsFromPdfByPath(filePath);
+  console.log(result);
+}
+
+main();
 
 
-console.log(tfidf.listTerms(0));
+
+
+
+

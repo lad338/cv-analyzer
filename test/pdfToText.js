@@ -8,6 +8,7 @@ const filePath = path.join(__dirname, "data/cv.pdf");
 const test = async () => {
   const result = await pdfToText.extractPdfByPath(filePath);
   console.log(result);
+  console.log("cleansed: ", pdfToText.cleansePdfText(result));
 }
 
 test();
